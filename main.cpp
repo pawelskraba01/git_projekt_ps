@@ -8,23 +8,30 @@ int main()
 	double a, b;
 	
 	cout << "Podaj a" << endl;
-	
 	cin >> a;
-	
-	while(a == 0)
-	{
-		cout << "A nie moze byæ zerem: " << endl;
-		cout << "Podaj a jeszcze raz: " << endl;
-		cin >> a; 
-	}
-	
 	
 	cout << "Podaj b" << endl;
 	cin >> b;
 	
 	
 	
-	cout << "Miejsce zerowe funkcji liniowej wynosi: " << (-b/a) << endl;
+	if(a == 0 && b != 0)
+	{
+		cout << "Funkcja nie ma miejsc zerowych." << endl;	
+	}
+	else if(a == 0 && b == 0)
+	{
+		cout << "Funkcja ma nieskoñczenie miejsc zerowych" << endl;	
+	}
+	else if(a != 0)
+	{
+		cout << "Miejsce zerowe funkcji liniowej wynosi: " << (-b/a) << endl;
+	
+	}
+	
+	
+	
+	
 	
 	
 
