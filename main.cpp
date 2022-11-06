@@ -1,47 +1,47 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 
 int main()
 {
 	
-	double Ax, By, C;
+	double Ax, Bx, C, delta, x0, x1, x2;
 	
-	cout << "Podaj Ax" << endl;
+	cout << "Podaj ax^2: " << endl;
 	cin >> Ax;
-	
-	cout << "Podaj By" << endl;
-	cin >> By;
 
-	cout << "Podaj C" << endl;
+	while (Ax == 0)
+	{
+		cout << "Ax^2 nie moze byc zerem. Podaj a rozne od zera: " <<endl;
+		cin >> Ax;
+	}
+	
+	
+	cout << "Podaj bx: " << endl;
+	cin >> Bx;
+
+	cout << "Podaj c: " << endl;
 	cin >> C;
 
+	delta = (Bx * Bx) - 4 * Ax * C;
 
-	By = -By;
-
-	Ax = Ax/By;
-	C = C/By;
-
-	By = By/By;
-
-	double a, b;
-
-	a = Ax;
-	b = C;
-	
-	
-	if(a == 0 && b != 0)
+	if(delta > 0)
 	{
-		cout << "Funkcja nie ma miejsc zerowych." << endl;	
+		x1 = (-Bx - sqrt(delta))/ 2 * Ax;
+		x2 = (-Bx + sqrt(delta))/ 2 * Ax;
+
+		cout << "Miejsca zerowe funkcji kwadratowe to x1: " << x1 << " i x2: " << x2 << endl;
 	}
-	else if(a == 0 && b == 0)
+	else if (delta == 0)
 	{
-		cout << "Funkcja ma nieskonczenie miejsc zerowych" << endl;	
+		x0 = -Bx/ (2 * Ax);
+
+		cout << "Miejsce zerowe funkcji kwadratowej to x0: " << x0 << endl;
 	}
-	else if(a != 0)
+	else if (delta < 0)
 	{
-		cout << "Miejsce zerowe funkcji liniowej wynosi: " << (-b/a) << endl;
-	
+		cout << "Brak miejsc zerowych funkcji kwadratowej." << endl;
 	}
 	
 	
